@@ -24,6 +24,7 @@
     "react-lottie": "^1.2.4",
     "react-three-fiber": "^6.0.13",
     "react-transition-group": "^4.4.5",
+    "sharp": "^0.33.2",
     "three": "^0.161.0"
   },
   "devDependencies": {
