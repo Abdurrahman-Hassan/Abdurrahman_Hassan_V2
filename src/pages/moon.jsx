@@ -5,7 +5,7 @@ const Mooncomponent = lazy(() => import("@/components/moon"));
 
 const Moon = () => {
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<div></div>}>
       <Mooncomponent />
     </Suspense>
   );

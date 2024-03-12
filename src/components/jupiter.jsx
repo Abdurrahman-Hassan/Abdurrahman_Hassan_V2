@@ -47,7 +47,7 @@ const Jupiter = () => {
             <ThreeDeffect>
               <h1
                 style={pacifico.style}
-                className="h-[150px] text-white text-[50px] mb-0 flex justify-center items-center text-center"
+                className="h-[100px] text-white text-[50px] mb-0 flex justify-center items-center text-center"
               >
                 Projects
               </h1>

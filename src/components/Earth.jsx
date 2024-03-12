@@ -38,7 +38,7 @@ const Earth = () => {
               <Header location={"/venus"} />
               <MobileHeader location={"/venus"} />
               <ThreeDeffect>
-                <div className="sm:mt-10 flex justify-center items-center w-[300px] h-[250px] -mb-5 -mt-10 sm:w-[400px] text-center ">
+                <div className="sm:mt-5flex justify-center items-center w-[300px] h-[210px] sm:h-[280px] -mb-5 -mt-10 sm:w-[400px] text-center ">
                   <h1
                     style={pacifico.style}
                     className=" text-[150px] text-center text-white bg-transparent sm:text-[200px] selection:bg-emerald-800"
@@ -65,7 +65,7 @@ const Earth = () => {
                   collaborate on your next project!
                 </p>
                 <a
-                  className="skillring flex justify-center items-center rounded"
+                  className="skillring2 flex justify-center items-center rounded"
                   href="/Abdurrahman_Hassan.pdf"
                   download={`/Abdurrahman_Hassan.pdf`}
                 >

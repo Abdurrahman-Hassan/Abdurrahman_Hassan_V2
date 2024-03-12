@@ -38,14 +38,14 @@ const Mars = () => {
   return (
     <PageTransition location={router} prevLocation={prevLocation}>
       <section className="mars text-center h-[100vh] text-white w-[100vw] selection:bg-red-700 flex flex-col justify-center items-center">
-      <div className="w-[90vw] sm:w-[100vw] h-[100vh] flex sm:flex-row flex-col-reverse justify-end items-center">
-        <div className="w-[90vw] sm:w-[800px] m-10 -mt-5 flex flex-col justify-center items-center">
+        <div className="w-[90vw] sm:w-[100vw] h-[100vh] flex sm:flex-row flex-col-reverse justify-end items-center">
+          <div className="w-[90vw] sm:w-[800px] m-10 -mt-5 flex flex-col justify-center items-center">
             <Header location={"/"} />
             <MobileHeader location={"/"} />
             <ThreeDeffect>
               <h1
                 style={pacifico.style}
-                className="text-white text-[50px] mb-0 mt-8 "
+                className="h-[100px] text-white text-[50px] mb-0 flex justify-center items-center text-center"
               >
                 Skills
               </h1>

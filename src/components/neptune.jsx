@@ -106,7 +106,7 @@ const Neptune = () => {
             <Header location={"/jupiter"} />
             <MobileHeader location={"/jupiter"} />
             <ThreeDeffect>
-              <h1 style={pacifico.style} className="text-white text-[50px]">
+              <h1 style={pacifico.style} className="text-white text-[50px] sm:w-[250px]">
                 Contact
               </h1>
             </ThreeDeffect>

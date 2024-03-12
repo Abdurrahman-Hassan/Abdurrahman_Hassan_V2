@@ -64,7 +64,7 @@ const Moon = () => {
               </ThreeDeffect>
             </div>
           </div>
-          <div className="w-[100vw] h-[180px] sm:w-[800px] sm:h-[800px] flex justify-center items-center sm:mb-[100px]">
+          <div className="w-[100vw] h-[180px] sm:w-[800px] sm:h-[800px] flex justify-center items-center">
             {" "}
             <Suspense fallback={<div></div>}>
               <Model img={"/moon.jpg"} />

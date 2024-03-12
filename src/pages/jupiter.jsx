@@ -5,7 +5,7 @@ const Jupitercomponent = lazy(() => import("@/components/jupiter"));
 
 const Jupiter = () => {
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<div></div>}>
       <Jupitercomponent />
     </Suspense>
   );
