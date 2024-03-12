@@ -40,7 +40,7 @@ const Venus = () => {
   return (
     <PageTransition location={router} prevLocation={prevLocation}>
       <section className="venus text-center w-[100vw] h-[100vh] text-white sm:w-[100vw] selection:bg-yellow-700 flex flex-col justify-center items-center">
-        <div className="w-[90vw] sm:w-[100vw] h-[100vh] flex sm:flex-row flex-col-reverse justify-center items-center">
+        <div className="w-[90vw] sm:w-[100vw] h-[100vh] flex sm:flex-row flex-col-reverse justify-end items-center">
           <div className="w-[90vw] sm:w-[800px] m-10 -mt-5 flex flex-col justify-center items-center">
             <ThreeDeffect>
               <h1
@@ -101,7 +101,7 @@ const Venus = () => {
               </div>
             </div>
           </div>
-          <div className="w-[100vw] h-[180px] sm:w-[800px] sm:h-[800px] flex justify-center items-center -mt-10 sm:mb-[100px]">
+          <div className="w-[100vw] h-[180px] sm:w-[800px] sm:h-[800px] flex justify-center items-center sm:mb-[100px]">
             {" "}
             <Suspense fallback={<div></div>}>
               <Model img={"/venus.jpg"} />

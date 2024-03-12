@@ -5,7 +5,7 @@ const Venuscomponent = lazy(() => import("@/components/venus"));
 
 const Venus = () => {
   return (
-    <Suspense fallback={<div></div>}>
+    <Suspense fallback={<Loading />}>
       <Venuscomponent />
     </Suspense>
   );

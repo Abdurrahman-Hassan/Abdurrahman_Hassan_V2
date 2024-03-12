@@ -39,7 +39,7 @@ const Moon = () => {
   return (
     <PageTransition location={router} prevLocation={prevLocation}>
       <section className="moon text-center h-[100vh] text-white w-[100vw] selection:bg-teal-800 flex flex-col justify-center items-center">
-        <div className="w-[90vw] sm:w-[100vw] h-[100vh] flex sm:flex-row flex-col-reverse justify-center items-center">
+        <div className="w-[90vw] sm:w-[100vw] h-[100vh] flex sm:flex-row flex-col-reverse justify-end items-center">
           <div className="w-[90vw] sm:w-[800px] m-10 -mt-5 flex flex-col justify-center items-center">
             <Header location={"/neptune"} />
             <MobileHeader location={"/neptune"} />

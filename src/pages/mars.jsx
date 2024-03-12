@@ -5,8 +5,8 @@ const Marscomponent = lazy(() => import("@/components/mars"));
 
 const Mars = () => {
   return (
-    <Suspense fallback={<div></div>}>
-    <Marscomponent />
+    <Suspense fallback={<Loading />}>
+      <Marscomponent />
     </Suspense>
   );
 };

@@ -5,8 +5,8 @@ const Neptunecomponent = lazy(() => import("@/components/neptune"));
 
 const Neptune = () => {
   return (
-    <Suspense fallback={<div></div>}>
-    <Neptunecomponent />
+    <Suspense fallback={<Loading />}>
+      <Neptunecomponent />
     </Suspense>
   );
 };

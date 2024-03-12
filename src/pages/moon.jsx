@@ -5,8 +5,8 @@ const Mooncomponent = lazy(() => import("@/components/moon"));
 
 const Moon = () => {
   return (
-    <Suspense fallback={<div></div>}>
-    <Mooncomponent />
+    <Suspense fallback={<Loading />}>
+      <Mooncomponent />
     </Suspense>
   );
 };
