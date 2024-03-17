@@ -1,26 +1,36 @@
-import { FaArrowLeft } from "react-icons/fa";
-import { Dancing_Script } from "next/font/google";
 import { memo } from "react";
-import { useRouter } from "next/router";
+import Lottie from "react-lottie";
+import right from "../../public/right.json";
+import left from "../../public/left.json";
 
-const dancing = Dancing_Script({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const MobileHeader = ({ location }) => {
-  const router = useRouter();
+const MobileHeader = ({ setindex, index }) => {
+  const rightOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: right,
+  };
+  const leftOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: left,
+  };
   return (
-    <div
-      style={dancing.style}
-      onClick={() => {
-        router.push(location);
-      }}
-      className="sm:hidden block cursor-pointer absolute top-10 left-5 z-10"
-    >
-      <div className="text-4xl">
-        <FaArrowLeft />
-      </div>
+    <div className="sm:hidden flex flex-row justify-between items-center w-[98vw] absolute z-50 top-7">
+      <button onClick={() => setindex(index !== 0 ? index - 1 : 0)}>
+        {index > 0 && (
+          <div className="text-4xl">
+            <Lottie options={leftOptions} height={100} width={100} />
+          </div>
+        )}
+      </button>
+      <button onClick={() => setindex(index !== 5 ? index + 1 : 5)}>
+        {" "}
+        {index < 5 && (
+          <div className="text-4xl">
+            <Lottie options={rightOptions} height={100} width={100} />
+          </div>
+        )}
+      </button>
     </div>
   );
 };

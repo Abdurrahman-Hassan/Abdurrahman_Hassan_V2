@@ -3,7 +3,7 @@ import logo from "../../public/favicon/android-chrome-512x512.png";
 import "@/styles/globals.css";
 export default function App({ Component, pageProps }) {
   return (
-    <div>
+    <>
       <Head>
         <title>Abdurrahman Hassan</title>
         <meta
@@ -17,6 +17,6 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
       <Component {...pageProps} />;
-    </div>
+    </>
   );
 }

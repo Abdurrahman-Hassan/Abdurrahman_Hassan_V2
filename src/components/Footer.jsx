@@ -2,14 +2,13 @@ import { FaArrowDown } from "react-icons/fa";
 import { Dancing_Script } from "next/font/google";
 import { motion } from "framer-motion";
 import { memo, useState } from "react";
-import { useRouter } from "next/router";
 
 const dancing = Dancing_Script({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const Footer = ({ location }) => {
+const Footer = ({ setindex, index }) => {
   const text = ["S", "c", "r", "o", "l", "l", "-", "D", "o", "w", "n"];
   const [hoveredChar, setHoveredChar] = useState(null);
   const [arrowhover, setArrowhover] = useState(null);
@@ -33,14 +32,11 @@ const Footer = ({ location }) => {
       scale: 1,
     },
   };
-  const router = useRouter();
 
   return (
-    <div
+    <button
       style={dancing.style}
-      onClick={() => {
-        router.push(location);
-      }}
+      onClick={() => setindex(index !== 5 ? index + 1 : 5)}
       className="hidden sm:flex cursor-pointer flex-row justify-center items-center gap-4 relative z-10"
     >
       <div className="flex flex-row gap-3">
@@ -68,7 +64,7 @@ const Footer = ({ location }) => {
       >
         <FaArrowDown />
       </motion.h4>
-    </div>
+    </button>
   );
 };
 

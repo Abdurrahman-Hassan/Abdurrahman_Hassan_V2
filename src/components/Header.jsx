@@ -2,19 +2,16 @@ import { FaArrowUp } from "react-icons/fa";
 import { Dancing_Script } from "next/font/google";
 import { motion } from "framer-motion";
 import { memo, useState } from "react";
-import { useRouter } from "next/router";
 
 const dancing = Dancing_Script({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const Header = ({ location }) => {
+const Header = ({ setindex, index }) => {
   const text = ["S", "c", "r", "o", "l", "l", "-", "U", "p"];
   const [hoveredChar, setHoveredChar] = useState(null);
   const [arrowhover, setArrowhover] = useState(null);
-
-  const router = useRouter();
 
   const handleHover = (char) => {
     setHoveredChar(char);
@@ -37,11 +34,9 @@ const Header = ({ location }) => {
   };
 
   return (
-    <div
+    <button
       style={dancing.style}
-      onClick={() => {
-        router.push(location);
-      }}
+      onClick={() => setindex(index !== 0 ? index - 1 : 0)}
       className="hidden sm:flex cursor-pointer flex-row justify-center items-center gap-4"
     >
       <div className="flex flex-row gap-3">
@@ -69,66 +64,8 @@ const Header = ({ location }) => {
       >
         <FaArrowUp />
       </motion.h4>
-    </div>
+    </button>
   );
 };
 
 export default memo(Header);
-{
-  /* <div style={dancing.style} className="font-bold text-xl mt-5 flex flex-row">
-      <div
-        className="w-[150px] h-[150px] flex flex-col justify-center items-center"
-        onClick={() => {
-          setindex(0);
-        }}
-      >
-        <Firstpage img={"/venus.jpg"} />
-        <h4 className="-mt-[20px]">About</h4>
-      </div>
-      <div
-        className="w-[150px] h-[150px] flex flex-col justify-center items-center"
-        onClick={() => {
-          setindex(1);
-        }}
-      >
-        <Firstpage img={"/earthmap.jpg"} />
-        <h4 className="-mt-[20px]">Home</h4>
-      </div>{" "}
-      <div
-        className="w-[150px] h-[150px] flex flex-col justify-center items-center"
-        onClick={() => {
-          setindex(2);
-        }}
-      >
-        <Firstpage img={"/mars.jpg"} />
-        <h4 className="-mt-[20px]">Skills</h4>
-      </div>
-      <div
-        className="w-[150px] h-[150px] flex flex-col justify-center items-center"
-        onClick={() => {
-          setindex(3);
-        }}
-      >
-        <Firstpage img={"/jupiter.jpg"} />
-        <h4 className="-mt-[20px]">Projects</h4>
-      </div>
-      <div
-        className="w-[150px] h-[150px] flex flex-col justify-center items-center"
-        onClick={() => {
-          setindex(4);
-        }}
-      >
-        <Firstpage img={"/neptune.jpg"} />
-        <h4 className="-mt-[20px]">Contact</h4>
-      </div>
-      <div
-        className="w-[150px] h-[150px] flex flex-col justify-center items-center"
-        onClick={() => {
-          setindex(5);
-        }}
-      >
-        <Firstpage img={"/moon.jpg"} />
-        <h4 className="-mt-[20px]">Version</h4>
-      </div>
-    </div> */
-}

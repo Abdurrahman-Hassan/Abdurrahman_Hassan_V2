@@ -1,15 +1,21 @@
 import React, { useRef, useEffect } from "react";
-import { useFrame, useThree } from "react-three-fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { SphereGeometry, MeshStandardMaterial } from "three";
 import { memo } from "react";
 import * as THREE from "three";
 
 const LoadingSphere = ({ img }) => {
   const sphereRef = useRef();
-  const { size, viewport } = useThree();
+  const { size, viewport, gl } = useThree();
   const aspect = size.width / viewport.width;
 
   const rotationSpeed = 0.01; // Adjust this value for desired rotation speed
+
+  useEffect(() => {
+    return () => {
+      gl.dispose();
+    };
+  });
 
   // Update rotation on each render cycle using useFrame
   useFrame(() => {
@@ -19,13 +25,6 @@ const LoadingSphere = ({ img }) => {
       sphereRef.current.rotation.y += rotationSpeed;
     }
   });
-
-  useEffect(() => {
-    // Clean up the effect on component unmount
-    return () => {
-      // No need to cancelAnimationFrame, useFrame handles it
-    };
-  }, []); // Empty dependency array ensures that the effect runs only once
 
   const sphereGeometry = new SphereGeometry(2, 32, 32);
 

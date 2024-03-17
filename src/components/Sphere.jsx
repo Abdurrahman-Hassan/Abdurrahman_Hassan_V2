@@ -1,13 +1,18 @@
-import React, { useEffect, useRef } from "react";
-import { useFrame, useThree } from "react-three-fiber";
+import React, { useEffect, useRef, memo } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
 import { SphereGeometry, MeshStandardMaterial } from "three";
-import { memo } from "react";
 import * as THREE from "three";
 
 const Sphere = ({ img }) => {
   const sphereRef = useRef();
-  const { size, viewport } = useThree();
+  const { size, viewport, gl } = useThree();
   const aspect = size.width / viewport.width;
+
+  useEffect(() => {
+    return () => {
+      gl.dispose();
+    };
+  });
 
   useFrame(({ mouse }) => {
     const mouseX = (mouse.x / aspect) * 2 - 1;
