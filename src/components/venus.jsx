@@ -17,7 +17,7 @@ const oleo = Oleo_Script({
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
 const Venus = ({ setindex, index }) => {
-  const router = useRouter();
+ /*  const router = useRouter();
   const [navigate, setNavigate] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Venus = ({ setindex, index }) => {
 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []); // Empty dependency array to run once on mount
-
+ */
   return (
     <section className="venus text-center w-[100vw] h-[100vh] text-white sm:w-[100vw] selection:bg-yellow-700 flex flex-col justify-center items-center">
       <div className="w-[90vw] sm:w-[100vw] h-[100vh] flex sm:flex-row flex-col-reverse justify-end items-center">

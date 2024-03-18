@@ -37,7 +37,7 @@ const montserrat_alt = Montserrat_Alternates({
 });
 
 const Neptune = ({ setindex, index }) => {
-  const router = useRouter();
+/*   const router = useRouter();
 
   const [navigate, setNavigate] = useState(false);
 
@@ -56,7 +56,7 @@ const Neptune = ({ setindex, index }) => {
 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []); // Empty dependency array to run once on mount
-
+ */
   const inputRef = useRef(null);
 
   const [formmessage, setFormMessage] = useState("");

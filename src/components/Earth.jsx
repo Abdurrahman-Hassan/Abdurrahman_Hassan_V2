@@ -1,5 +1,5 @@
 import { Suspense, lazy, memo, useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import Head from "next/head";
 
 const Model = lazy(() => import("@/components/Model"));
 const ThreeDeffect = lazy(() => import("./threeDaffect"));
@@ -8,8 +8,6 @@ const Footer = lazy(() => import("./Footer"));
 const MobileHeader = lazy(() => import("./MobileHeader"));
 
 import { Pacifico, Oleo_Script, Poppins } from "next/font/google";
-import Loading from "./Loading";
-
 const pacifico = Pacifico({ subsets: ["latin"], weight: "400" });
 const oleo = Oleo_Script({
   subsets: ["latin"],
@@ -18,7 +16,7 @@ const oleo = Oleo_Script({
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
 const Earth = ({ setindex, index }) => {
-  const router = useRouter();
+  /*  const router = useRouter();
   const [navigate, setNavigate] = useState(false);
 
   useEffect(() => {
@@ -36,7 +34,7 @@ const Earth = ({ setindex, index }) => {
 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []); // Empty dependency array to run once on mount
-
+ */
   const [winsize, setWinsize] = useState(0);
   useEffect(() => {
     setWinsize(window.screen.width.toFixed());
@@ -45,6 +43,9 @@ const Earth = ({ setindex, index }) => {
   if (winsize) {
     return (
       <section className="earth text-center w-[100vw] h-[100vh] text-white sm:w-[100vw] selection:bg-emerald-800 flex flex-col justify-center items-center">
+        <Head>
+          <title>Abdurrahman-Hassan_Full-Stack-Developer</title>
+        </Head>
         <div className="w-[90vw] sm:w-[100vw] h-[100vh] flex sm:flex-row flex-col-reverse justify-end items-center">
           <div className="w-[90vw] sm:w-[800px] m-10 -mt-5 flex flex-col justify-center items-center">
             <Header setindex={setindex} index={index} />
@@ -73,13 +74,15 @@ const Earth = ({ setindex, index }) => {
                 into programming and exploring new tech. Let&apos;s collaborate
                 on your next project!
               </p>
-              <a
-                className="skillring2 flex justify-center items-center rounded"
-                href="/Abdurrahman_Hassan.pdf"
-                download={`/Abdurrahman_Hassan.pdf`}
-              >
-                Download CV
-              </a>
+              <ThreeDeffect>
+                <a
+                  className="skillring2 flex justify-center items-center rounded"
+                  href="/Abdurrahman_Hassan.pdf"
+                  download={`/Abdurrahman_Hassan.pdf`}
+                >
+                  Download CV
+                </a>
+              </ThreeDeffect>
             </div>
           </div>
           <div className="w-[100vw] h-[180px] sm:w-[800px] sm:h-[800px] flex justify-center items-center sm:mb-[100px]">

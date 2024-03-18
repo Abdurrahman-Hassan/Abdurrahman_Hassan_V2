@@ -16,7 +16,7 @@ const oleo = Oleo_Script({
 });
 
 const Moon = ({ setindex, index }) => {
-  const router = useRouter();
+  /* const router = useRouter();
 
   const [navigate, setNavigate] = useState(false);
 
@@ -35,7 +35,7 @@ const Moon = ({ setindex, index }) => {
 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []); // Empty dependency array to run once on mount
-
+ */
   return (
     <section className="moon text-center h-[100vh] text-white w-[100vw] selection:bg-teal-800 flex flex-col justify-center items-center">
       <div className="w-[90vw] sm:w-[100vw] h-[100vh] flex sm:flex-row flex-col-reverse justify-end items-center">

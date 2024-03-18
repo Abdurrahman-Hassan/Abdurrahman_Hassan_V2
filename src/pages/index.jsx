@@ -7,18 +7,18 @@ import React, {
   Suspense,
 } from "react";
 
-const Earth = lazy(() => import("@/components/Earth"));
 
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import "react-awesome-slider/dist/custom-animations/fold-out-animation.css";
 
-import Loading from "@/components/Loading";
-import Mars from "@/components/mars";
-import Jupiter from "@/components/jupiter";
-import Neptune from "@/components/neptune";
-import Moon from "@/components/moon";
-import Venus from "@/components/venus";
+const Earth = lazy(() => import("@/components/Earth"));
+const Loading = lazy(() => import("@/components/Loading"));
+const Mars = lazy(() => import("@/components/mars"));
+const Jupiter = lazy(() => import("@/components/jupiter"));
+const Neptune = lazy(() => import("@/components/neptune"));
+const Moon = lazy(() => import("@/components/moon"));
+const Venus = lazy(() => import("@/components/venus"));
 
 const Home = () => {
   const awesomeSliderRef = useRef(null);
@@ -62,8 +62,11 @@ const Home = () => {
         className=" overflow-hidden w-[100vw] h-[100vh]"
       >
         <div>
+          {" "}
           {activeIndex === 0 && (
-            <Venus setindex={setActiveIndex} index={activeIndex} />
+            <Suspense fallback={<Loading />}>
+              <Venus setindex={setActiveIndex} index={activeIndex} />
+            </Suspense>
           )}
         </div>
         <div>
@@ -75,31 +78,35 @@ const Home = () => {
           )}
         </div>
         <div>
-          {" "}
           {activeIndex === 2 && (
-            <Mars setindex={setActiveIndex} index={activeIndex} />
+            <Suspense fallback={<Loading />}>
+              <Mars setindex={setActiveIndex} index={activeIndex} />
+            </Suspense>
           )}
         </div>
         <div>
-          {" "}
           {activeIndex === 3 && (
-            <Jupiter setindex={setActiveIndex} index={activeIndex} />
+            <Suspense fallback={<Loading />}>
+              <Jupiter setindex={setActiveIndex} index={activeIndex} />
+            </Suspense>
           )}
         </div>
         <div>
-          {" "}
           {activeIndex === 4 && (
-            <Neptune setindex={setActiveIndex} index={activeIndex} />
+            <Suspense fallback={<Loading />}>
+              <Neptune setindex={setActiveIndex} index={activeIndex} />
+            </Suspense>
           )}
         </div>
         <div>
-          {" "}
           {activeIndex === 5 && (
-            <Moon setindex={setActiveIndex} index={activeIndex} />
+            <Suspense fallback={<Loading />}>
+              <Moon setindex={setActiveIndex} index={activeIndex} />
+            </Suspense>
           )}
         </div>
       </AwesomeSlider>
     </div>
   );
 };
-export default Home;
+export default memo(Home);
